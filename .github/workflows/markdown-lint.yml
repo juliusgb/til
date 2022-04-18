@@ -1,11 +1,8 @@
 name: Markdown Lint
 on: 
-  pull_request:
-    branches:
-      - "main"
   push:
     branches:
-      - "**" # run when push happens on all branches
+      - "main" # run when push happens on all branches
 
 jobs:
   lint:
