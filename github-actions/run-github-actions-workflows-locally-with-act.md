@@ -105,4 +105,4 @@ Run when a specific event (such as `push`) occurs on the repository:
 
 Output looks like:
 
-![Output of running a workflow locally with act](github-workflows/RunWorkflowLocallyWithAct.png "Output of running a workflow locally with act")
+![Output of running a workflow locally with act](github-actions/RunWorkflowLocallyWithAct.png "Output of running a workflow locally with act")
