@@ -1,0 +1,17 @@
+name: Test CI
+
+on:
+  push:
+    branches:
+      - "til"
+env:
+  TEST_NAME: ENV_VAR_IN_WORKFLOW
+
+jobs:
+  prep:
+    name: prep
+    runs-on: [self-hosted, my-awesome-runner]
+
+    steps:
+      - name: Test echo
+        run: echo "Hello World $TEST_NAME and $MY_ENV_VAR"
