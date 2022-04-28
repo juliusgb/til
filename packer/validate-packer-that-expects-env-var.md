@@ -2,6 +2,7 @@
 
 I was working on creating EC2 images using Packer.
 For that, there's the `amazon-ebs` [Packer Builder](https://www.packer.io/plugins/builders/amazon/ebs) to use.
+
 After checking that there's nothing wrong with the syntax,
 thanks to `packer validate --syntax-only /path/to/packter-template.pkr.hcr`,
 I ran `packer validate /path/to/packter-template.pkr.hcr` and got the error below:
@@ -19,7 +20,7 @@ Error: 2 error(s) occurred:
   (source code not available)
 ```
 
-The question became 
+The question became
 > is `source_ami` set ? If so, why isn't packer finding it?
 
 The `source_ami` is set but expects a value from an environment variable.
