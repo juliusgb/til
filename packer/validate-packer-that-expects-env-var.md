@@ -1,4 +1,4 @@
-# Locally validating packer for EC2 images that expects an environment variable
+# Locally validate packer for EC2 images that expects an environment variable
 
 I was working on creating EC2 images using Packer.
 For that, there's the `amazon-ebs` [Packer Builder](https://www.packer.io/plugins/builders/amazon/ebs) to use.
@@ -19,7 +19,8 @@ Error: 2 error(s) occurred:
   (source code not available)
 ```
 
-The question became "is `source_ami` set ? If so, why isn't packer finding it?"
+The question became 
+> is `source_ami` set ? If so, why isn't packer finding it?
 
 The `source_ami` is set but expects a value from an environment variable.
 

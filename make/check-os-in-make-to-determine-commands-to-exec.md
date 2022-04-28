@@ -1,4 +1,4 @@
-# Blah
+# Check OS to determine commands to execute
 
 I use different operating systems for work.
 
@@ -30,5 +30,7 @@ else
     export SOURCE_AMI="1234")
 endif
 ```
+
+Run the Makefile with `make -f /path/to/Makefile`.
 
 The next step would be to detect which shell I'm using.
