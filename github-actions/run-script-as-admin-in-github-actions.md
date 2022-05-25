@@ -2,8 +2,8 @@
 
 This came up when I wanted to run a powershell script with elevated `Administrator` privileges in a CI/CD process.
 
-I'm using GitHub Actions as my CI/CD. These Actions run run on self-hosted runners on Windows.
-Though it works, Running a script as an `Administrator` like that should alert you to proceed with caution.
+I'm using GitHub Actions for my CI/CD. These Actions run run on self-hosted runners on Windows.
+Though it works, running a script as an `Administrator` like that should alert you to proceed with caution.
 
 ## The PowerShell Script
 
@@ -11,6 +11,7 @@ The script is a simple one that writes "Hello World" to a text file.
 It's stored in the application's git repository.
 
 ```powershell
+# RunAsAdmin.ps1
 $LocalTestDir="C:\var\test"
 if (Test-Path $LocalTestDir -PathType Container) {
   Write-Host "$LocalTestDir exists"
@@ -57,5 +58,5 @@ one option would be to upload it as an artifact so that it's accessible in anoth
 
 ## Other useful sources
 
-- Basis for the above: <https://github.com/atao/PowerShell-Privileges-Escalation>
+- Helpful as a base: <https://github.com/atao/PowerShell-Privileges-Escalation>
 - API Docs for the `Start-Process: <https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/start-process?view=powershell-7.2>
