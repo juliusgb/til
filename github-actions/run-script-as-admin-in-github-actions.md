@@ -1,8 +1,9 @@
-# Run PowerShell Script as Admin in GitHub Actions on Self-hosted Runners
+# Run PowerShell Script as Admin on self-hosted Windows Runners
 
 This came up when I wanted to run a powershell script with elevated `Administrator` privileges in a CI/CD process.
 
 I'm using GitHub Actions for my CI/CD. These Actions run run on self-hosted runners on Windows.
+
 Though it works, running a script as an `Administrator` like that should alert you to proceed with caution.
 
 ## The PowerShell Script
