@@ -26,6 +26,8 @@ Get-Content "$LocalTestDir\test.txt"
 
 ## GitHub Actions workflow
 
+The github action checks out the repository to access `RunAsAdmin.ps1`, executes the script, and checks the results.
+
 ```yml
 name: Run as admin test
 on:
