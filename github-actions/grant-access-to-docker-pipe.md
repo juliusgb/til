@@ -12,7 +12,7 @@ When running `docker build` as part of a step in a GitHub action, we're greeted 
 ## The Fix
 
 Grant the user under which the GitHub Action runs access only to the Docker Pipe
-as in <https://www.axians-infoma.de/techblog/allow-access-to-the-docker-engine-without-admin-rights-on-windows/>
+as in <https://github.com/tfenster/dockeraccesshelper>
 and not to the whole machine.
 
 Doing that as part of preparing the runner means I don't need to think about it anymore.
