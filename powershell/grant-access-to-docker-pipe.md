@@ -3,7 +3,7 @@
 Aim:
 
 - able to run `docker` commands without getting `Administrator` privileges.
-- Run `docker` commands in a GitHub Action that's running on Self-hosted runners. See https://github.com/juliusgb/til/blob/main/github-actions/run-docker-commands.md
+- Preparation for running `docker` commands in GitHub Actions that's running on Self-hosted runners. See <https://github.com/juliusgb/til/blob/main/github-actions/run-docker-commands.md>
 
 When running `docker build` on local dev machine, we're greeted with the error:
 

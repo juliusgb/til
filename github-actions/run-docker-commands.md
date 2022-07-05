@@ -12,7 +12,7 @@ When running `docker build` as part of a step in a GitHub action, we're greeted 
 ## The Fix
 
 Grant the user under which the GitHub Action runs access only to the Docker Pipe
-as in <https://github.com/tfenster/dockeraccesshelper>
+as in <https://github.com/juliusgb/til/blob/main/powershell/grant-access-to-docker-pipe.md>
 and not to the whole machine.
 
 ```powershell
