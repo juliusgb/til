@@ -12,17 +12,34 @@ When running `docker build` as part of a step in a GitHub action, we're greeted 
 ## The Fix
 
 Grant the user under which the GitHub Action runs access only to the Docker Pipe
-as in <https://github.com/tfenster/dockeraccesshelper>
+as in <https://github.com/juliusgb/til/blob/main/powershell/grant-access-to-docker-pipe.md>
 and not to the whole machine.
 
+```powershell
+# GrantAccessToDockerPipe.ps1
+# account that's to be granted access. When on laptop, I use juliusg.
+$account="NT AUTHORITY\NetworkService" 
+$npipe = "\\.\pipe\docker_engine"
+$dInfo = New-Object "System.IO.DirectoryInfo" -ArgumentList $npipe
+$dSec = $dInfo.GetAccessControl()
+$fullControl =[System.Security.AccessControl.FileSystemRights]::FullControl
+$allow =[System.Security.AccessControl.AccessControlType]::Allow
+$rule = New-Object "System.Security.AccessControl.FileSystemAccessRule" -ArgumentList $account,$fullControl,$allow
+$dSec.AddAccessRule($rule)
+$dInfo.SetAccessControl($dSec)
+```
+
 Doing that as part of preparing the runner means I don't need to think about it anymore.
+
+- After the runner starts, `GrantAccessToDockerPipe.ps1` is executed.
+- Now the user of the runner has access to the Docker Pipe and can execute docker commands.
 
 ## The Workflow
 
 The github action checks out the repository to access a couple of files:
 
 ```yml
-name: Run as admin test
+name: Docker build and run
 on:
   push:
     branches:
@@ -32,7 +49,7 @@ jobs:
   runs-on: [self-hosted, windows]
   steps:
     - name: Checkout repo
-      uses: actions/checkout@v2 # repo contains the RunAsAdmin.ps1
+      uses: actions/checkout@v2 # repo contains the docker file
     - name: Display User
       run: |
         whoami
@@ -43,3 +60,4 @@ jobs:
 ## References
 
 - Grant user access to docker pipe <https://github.com/tfenster/dockeraccesshelper> based on <https://www.axians-infoma.de/techblog/allow-access-to-the-docker-engine-without-admin-rights-on-windows/>
+- About the `Network Service` account: https://docs.microsoft.com/en-us/windows/win32/services/networkservice-account
