@@ -10,10 +10,10 @@ jobs:
     
     steps:
     - name: Check out repo
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
     - name: Get file changes
       id: get_file_changes
-      uses: trilom/file-changes-action@v1.2.3
+      uses: trilom/file-changes-action@v1.2.4
       with:
         output: ' '
     - name: Echo changed files
@@ -25,7 +25,7 @@ jobs:
         echo -e "::set-output name=files::\c";echo "${{ steps.get_file_changes.outputs.files }}" | for i in $(cat) ; do if [[ $i == *.md ]]; then echo -e "$i \c"; fi  ;done
     - name: markdownlint-cli
       if: ${{ steps.get_md_changes.outputs.files}}
-      uses: nosborn/github-action-markdown-cli@v1.1.1
+      uses: nosborn/github-action-markdown-cli@v3.2.0
       with:
         files: ${{ steps.get_md_changes.outputs.files}}
         config_file: ".markdownlint"
