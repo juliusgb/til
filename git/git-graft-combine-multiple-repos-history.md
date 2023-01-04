@@ -149,9 +149,3 @@ Push all grafts to remote
 ```sh
 git push origin 'refs/replace/*'
 ```
-
-### Git commit
-
-Running `gitk` shows the commits that have been grafted
-
-[![Git-Commits-With-Without-Grafting.PNG](/assets/2023-01-04-git-replace-graft/Git-Commits-With-Without-Grafting.PNG "WinRM Client-Server communication")](/assets/2023-01-04-git-replace-graft/Git-Commits-With-Without-Grafting.PNG)
