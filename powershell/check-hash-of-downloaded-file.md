@@ -13,7 +13,7 @@ $Hash='523ad3fef34be9a5e29f58fd6ba68f38e3df5832f8f6a39ba73f2e9715e3bc24';
 $Alg='SHA256'
 $DownloadedFileName='packer_1.8.4_windows_386.zip';
 
-if((Get-FileHash -Path $DownloadedFileName -Algorithm $Alg).Hash.ToUpper() -ne $Hash.ToUpper() { 
+if((Get-FileHash -Path $DownloadedFileName -Algorithm $Alg).Hash.ToUpper() -ne $Hash.ToUpper()) { 
     throw 'Computed checksum did not match';
 }
 ```
