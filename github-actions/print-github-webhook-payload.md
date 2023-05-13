@@ -22,8 +22,8 @@ jobs:
 
     steps:
       - name: print whole context
-				env:
-					GITHUB_CONTEXT: ${{ toJson(github) }}
+			  env:
+				  GITHUB_CONTEXT: ${{ toJson(github) }}
         run: |
           echo "$GITHUB_CONTEXT"
 
