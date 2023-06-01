@@ -24,4 +24,5 @@ indent_size = 2
 # Two spaces at the end of a line in Markdown mean "new line",
 # so trimming trailing whitespace for such files can cause breakage.
 [*.md]
+indent_style = space
 trim_trailing_whitespace = false
