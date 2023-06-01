@@ -18,14 +18,14 @@ $reponame="awesome-repo"
 $branchname="main"
 
 jq -n '
-	{
-		github_meta: {
-			reponame: $reponame,
-			branch_name: $branchname
-		},
-		feature: {},
-		all: $ARGS
-	}' \
+  {
+    github_meta: {
+      reponame: $reponame,
+      branch_name: $branchname
+    },
+    feature: {},
+    all: $ARGS
+  }' \
   --arg reponame "$reponame" \
   --arg branchname "$branchname" \
 
