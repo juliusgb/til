@@ -25,11 +25,7 @@ jobs:
         env:
           GITHUB_CONTEXT: ${{ toJson(github) }}
         run: |
-          echo "$GITHUB_CONTEXT"
-
-      - name: print delete webhook payload
-        run: |
-          echo ${{ GITHUB.event }}
+          echo "GITHUB_CONTEXT is $GITHUB_CONTEXT"
+          echo "VARS_CONTEXT is $VARS_CONTEXT"
+          echo "delete event is ${{ GITHUB_CONTEXT.event }}"
 ```
-
-

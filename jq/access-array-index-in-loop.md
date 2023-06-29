@@ -54,7 +54,7 @@ jsonData=$(cat <<EOF
   EOF
 )
 
-numberOfItems = $(echo $jsonData | jq --raw-output length)
+numberOfItems=$(echo $jsonData | jq --raw-output length)
 
 # loop over the list in json
 for (( i=0; i<numberOfItems; i++ ))
