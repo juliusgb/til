@@ -1,0 +1,8 @@
+- name: get vars
+  ansible.builtin.include_vars: host_vars/localhost.yaml
+  no_log: True
+
+# see https://docs.ansible.com/ansible/latest/collections/ansible/builtin/set_fact_module.html
+# item on left-side of equals is what was passed into this task.
+# after lookup in keepass, item is set again
+- ansible.builtin.set_fact: "{{ item }}={{ lookup('viczem.keepass.keepass', 'AnsibleWithKeePass/{{ item }}', 'username') }}"
