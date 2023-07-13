@@ -1,0 +1,3 @@
+# useful for testing locally.
+# https://docs.ansible.com/ansible/latest/inventory/implicit_localhost.html
+localhost ansible_connection=local ansible_python_interpreter="{{ansible_playbook_python}}" gather_facts=false

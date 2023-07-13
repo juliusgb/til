@@ -1,0 +1,8 @@
+# call task 'get_from_keepass.yml', passing to it, 'test_a'
+- include_tasks: get_from_keepass.yml
+  with_items:
+    - "test_a"
+
+- name: Display KeePass Output
+  debug:
+    msg: "Keepass Output is '{{ test_a }}' "
