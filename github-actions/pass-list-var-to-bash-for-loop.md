@@ -1,7 +1,7 @@
 # Pass list to bash for processing
 
 Set list in a GitHub Actions workflow.
-And pass it to bash for processing.
+And pass it to bash for processing, such as [looping through it](../bash/2023-08-24-bash-declare-and-loop-over-array.md).
 
 ```yml
 name: my workflow
